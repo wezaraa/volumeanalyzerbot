@@ -1,0 +1,18 @@
+server.port: 5000
+
+telegrambot:
+  userName: ${USER_NAME}
+  botToken: ${BOT_TOKEN}
+  webHookPath: ${WEBHOOK_PATH}
+  channel-id: ${ CHANNEL_ID }
+
+binance:
+  api-key: ${API_KEY}
+  secret-key: ${SECRET_KEY}
+  number-of-entries: 50
+  number-of-entries-to-calculation: 2
+  symbol: ${SYMBOL}
+  min-volume: 30
+logging:
+  level.root: info
+  pattern.console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n'
