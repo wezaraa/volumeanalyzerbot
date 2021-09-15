@@ -7,8 +7,8 @@ telegrambot:
   channel-id: ${CHANNEL_ID}
 
 ping:
-  url=https://www.google.com
-  period={PING_PERIOD}
+  url: 'https://www.google.com'
+  period: {PING_PERIOD}
 
 binance:
   api-key: ${API_KEY}
