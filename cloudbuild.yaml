@@ -1,6 +1,18 @@
 steps:
   - name: 'gcr.io/cloud-builders/mvn'
     args: [ 'install' ]
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=europe-central2-a'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster'
+      - 'API_KEY=${_API_KEY}'
+      - 'BOT_TOKEN=${_BOT_TOKEN}'
+      - 'CHANNEL_ID=${_CHANNEL_ID}'
+      - 'PING_PERIOD=${_PING_PERIOD}'
+      - 'SECRET_KEY=${_SECRET_KEY}'
+      - 'SYMBOL=${_SYMBOL}'
+      - 'TZ=${_TZ}'
+      - 'USER_NAME=${_USER_NAME}'
+      - 'WEBHOOK_PATH=${_WEBHOOK_PATH}'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/wezara/volumeanalyzer', '.']
     timeout: 500s
