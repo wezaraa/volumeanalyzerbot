@@ -57,7 +57,7 @@ public class TelegramBot extends TelegramWebhookBot {
     public BotApiMethod onWebhookUpdateReceived(Update update) {
         log.info("update ->" + update);
 
-        return null;
+        return SendMessage.builder().chatId(String.valueOf(update.getMessage().getChatId())).text("wezaraResponse").build();
     }
 
     public void sendSignalToChannel(String direction, Double coinQuantity) throws IOException {
