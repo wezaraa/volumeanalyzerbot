@@ -2,7 +2,7 @@ steps:
   - name: 'gcr.io/cloud-builders/mvn'
     args: [ 'install' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/my-project/my-image', '.']
+    args: ['build', '-t', 'gcr.io/wezara/volumeanalyzer', '.']
     timeout: 500s
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-central2-a'
