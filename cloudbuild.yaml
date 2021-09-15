@@ -18,6 +18,4 @@ steps:
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-central2-a'
       - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster'
-options:
-  machineType: 'N1_HIGHCPU_8'
 timeout: 660s
