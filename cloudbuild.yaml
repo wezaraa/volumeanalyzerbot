@@ -7,6 +7,15 @@ steps:
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-central2-a'
       - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster'
+      - 'API_KEY=${_API_KEY}'
+      - 'BOT_TOKEN=${_BOT_TOKEN}'
+      - 'CHANNEL_ID=${_CHANNEL_ID}'
+      - 'PING_PERIOD=${_PING_PERIOD}'
+      - 'SECRET_KEY=${_SECRET_KEY}'
+      - 'SYMBOL=${_SYMBOL}'
+      - 'TZ=${_TZ}'
+      - 'USER_NAME=${_USER_NAME}'
+      - 'WEBHOOK_PATH=${_WEBHOOK_PATH}'
 options:
   machineType: 'N1_HIGHCPU_8'
 timeout: 660s
