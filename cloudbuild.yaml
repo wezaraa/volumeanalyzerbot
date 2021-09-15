@@ -1,13 +1,16 @@
-  resource "google_cloudbuild_trigger" "on-push" {
-    name    = format("on-push-%s", var.repo_name)
-    github {
-    owner = var.repo_owner
-    name  = var.repo_name
-    push {
-    branch = ".*"
-    }
-    }
-
-    filename   = "cloudbuild.yaml"
-    provider   = google-beta
-  }
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/my-project/my-image', '.']
+    timeout: 500s
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/my-project/my-image']
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: ['set', 'image', 'deployment/my-deployment', 'my-container=gcr.io/my-project/my-image']
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=us-east4-b'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster'
+options:
+  machineType: 'N1_HIGHCPU_8'
+timeout: 660s
+tags: ['mytag1', 'mytag2']
+images: ['gcr.io/my-project/myimage']
