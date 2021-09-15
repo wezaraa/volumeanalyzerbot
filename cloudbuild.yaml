@@ -12,10 +12,10 @@ steps:
       - 'USER_NAME=${_USER_NAME}'
       - 'WEBHOOK_PATH=${_WEBHOOK_PATH}'
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/mygcpcloudbuildplanet', '.' ]
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/volumeanalyzer', '.' ]
     timeout: 500s
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=europe-central2-a'
       - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster'
-images: [ 'gcr.io/$PROJECT_ID/mygcpcloudbuildplanet' ]
+images: [ 'gcr.io/$PROJECT_ID/volumeanalyzer' ]
 timeout: 660s
