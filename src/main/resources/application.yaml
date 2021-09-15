@@ -6,6 +6,10 @@ telegrambot:
   webHookPath: ${WEBHOOK_PATH}
   channel-id: ${CHANNEL_ID}
 
+ping:
+  url=https://www.google.com
+  period={PING_PERIOD}
+
 binance:
   api-key: ${API_KEY}
   secret-key: ${SECRET_KEY}
