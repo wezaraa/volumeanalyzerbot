@@ -17,7 +17,7 @@ public class PingService {
     private String pingUrl;
 
 
-    @Scheduled(fixedRateString = "${pingtask.period}")
+    @Scheduled(fixedRateString = "${ping.period}")
     public void pingMe() {
         try {
             URL url = new URL(pingUrl);
