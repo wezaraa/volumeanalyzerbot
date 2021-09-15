@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -35,6 +36,11 @@ public class VolumeService
 
     @Value( "${binance.symbol}" )
     private String symbol;
+
+    @PostConstruct
+    void init() throws IOException {
+        bot.sendSignalToChannel("ВВЕРХ", 12d);
+    }
 
     @Scheduled( fixedDelay = 100 )
     public void analyzeVolume() throws IOException {
