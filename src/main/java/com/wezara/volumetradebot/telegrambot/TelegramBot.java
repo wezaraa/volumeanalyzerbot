@@ -59,9 +59,9 @@ public class TelegramBot extends TelegramWebhookBot {
         return null;
     }
 
-    public void sendSignalToChannel(String direction, String coinQuantity) throws IOException {
+    public void sendSignalToChannel(String direction, Double coinQuantity) throws IOException {
         String toTime = LocalTime.now().plusMinutes(2).format(DateTimeFormatter.ofPattern("HH:mm"));
-        String text = String.format("COIN IDX - %s до %s. Кількість - %s", direction, toTime, coinQuantity);
+        String text = String.format("COIN IDX - %s до %s. Кількість - %,.2f", direction, toTime, coinQuantity);
 
         String urlString = String.format(CHANNEL_MESSAGE_URL, getBotToken(), channelId, text);
 

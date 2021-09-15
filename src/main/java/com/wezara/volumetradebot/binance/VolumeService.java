@@ -70,13 +70,13 @@ public class VolumeService
         if( askAmount > minimalVolume )
         {
             log.info( "ASK ВНИЗ -> " + askAmount );
-            bot.sendSignalToChannel("ВНИЗ", String.valueOf(askAmount));
+            bot.sendSignalToChannel("ВНИЗ", askAmount);
             pauseExecution(askAmount);
         }
         if( bidAmount > minimalVolume )
         {
             log.info( "BID ВВЕРХ -> " + bidAmount );
-            bot.sendSignalToChannel("ВВЕРХ", String.valueOf(askAmount));
+            bot.sendSignalToChannel("ВВЕРХ", askAmount);
             pauseExecution(bidAmount);
         }
 
