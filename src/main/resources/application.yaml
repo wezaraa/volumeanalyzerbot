@@ -1,4 +1,4 @@
-server.port: 5000
+server.port: ${PORT:5000}
 
 telegrambot:
   userName: ${USER_NAME}
@@ -6,15 +6,11 @@ telegrambot:
   webHookPath: ${WEBHOOK_PATH}
   channel-id: ${CHANNEL_ID}
 
-ping:
-  url: 'https://www.google.com'
-  period: {PING_PERIOD}
-
 binance:
   api-key: ${API_KEY}
   secret-key: ${SECRET_KEY}
   number-of-entries: 50
-  number-of-entries-to-calculation: 2
+  number-of-entries-to-calculation: ${ENTRIES_COUNT:2}
   symbol: ${SYMBOL}
   min-volume: 30
 logging:
