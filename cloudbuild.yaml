@@ -2,5 +2,5 @@ steps:
   - name: 'gcr.io/cloud-builders/mvn'
     args: ['install']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag=gcr.io/$PROJECT_ID/spring-boot', '.']
+    args: [ 'build', '-t', 'gcr.io/volumeanalyzer/volumeanalyzerv1', '.' ]
 images: ['gcr.io/$PROJECT_ID/spring-boot']
