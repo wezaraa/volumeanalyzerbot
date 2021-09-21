@@ -1,20 +1,20 @@
-server.port: ${PORT:5000}
+server.port: ${_PORT:5000}
 
 telegrambot:
-  userName: ${USER_NAME}
-  botToken: ${BOT_TOKEN}
-  webHookPath: ${WEBHOOK_PATH}
-  channel-id: ${CHANNEL_ID}
+  userName: ${_USER_NAME}
+  botToken: ${_BOT_TOKEN}
+  webHookPath: ${_WEBHOOK_PATH}
+  channel-id: ${_CHANNEL_ID}
 
 binance:
-  api-key: ${API_KEY}
-  secret-key: ${SECRET_KEY}
+  api-key: ${_API_KEY}
+  secret-key: ${_SECRET_KEY}
   number-of-entries: 50
-  number-of-entries-to-calculation: ${ENTRIES_COUNT:3}
-  primary-symbol: ${PRIMARY_SYMBOL}
-  primary-min-volume: ${PRIMARY_MIN_VOLUME}
-  secondary-symbol: ${SECONDARY_SYMBOL}
-  secondary-min-volume: ${SECONDARY_MIN_VOLUME}
+  number-of-entries-to-calculation: ${_ENTRIES_COUNT:3}
+  primary-symbol: ${_PRIMARY_SYMBOL}
+  primary-min-volume: ${_PRIMARY_MIN_VOLUME}
+  secondary-symbol: ${_SECONDARY_SYMBOL}
+  secondary-min-volume: ${_SECONDARY_MIN_VOLUME}
 logging:
   level.root: info
   pattern.console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n'
