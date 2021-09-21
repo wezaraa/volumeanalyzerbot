@@ -1,6 +1,7 @@
 FROM amazoncorretto:11
 # Refer to Maven build -> finalName
-ARG JAR_FILE=target/spring-boot-web.jar
+VOLUME /tmp
+ARG JAR_FILE=target/*.jar
 
 # cd /opt/app
 WORKDIR /opt/app
