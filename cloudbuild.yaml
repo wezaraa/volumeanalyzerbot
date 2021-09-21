@@ -1,6 +1,18 @@
 steps:
   - name: 'gcr.io/cloud-builders/mvn'
     args: ['install']
+    env:
+      - '_USER_NAME=$_USER_NAME'
+      - '_BOT_TOKEN=$_BOT_TOKEN'
+      - '_WEBHOOK_PATH=$_WEBHOOK_PATH'
+      - '_CHANNEL_ID=$_CHANNEL_ID'
+      - '_API_KEY=$_API_KEY'
+      - '_SECRET_KEY=$_SECRET_KEY'
+      - '_ENTRIES_COUNT=$_ENTRIES_COUNT'
+      - '_PRIMARY_SYMBOL=$_PRIMARY_SYMBOL'
+      - '_PRIMARY_MIN_VOLUME=$_PRIMARY_MIN_VOLUME'
+      - '_SECONDARY_SYMBOL=$_SECONDARY_SYMBOL'
+      - '_SECONDARY_MIN_VOLUME=$_SECONDARY_MIN_VOLUME'
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'gcr.io/volumeanalyzer/volumeanalyzerv1', '.' ]
 images: ['gcr.io/$PROJECT_ID/spring-boot']
