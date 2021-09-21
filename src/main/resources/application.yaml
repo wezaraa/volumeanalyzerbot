@@ -10,9 +10,11 @@ binance:
   api-key: ${API_KEY}
   secret-key: ${SECRET_KEY}
   number-of-entries: 50
-  number-of-entries-to-calculation: ${ENTRIES_COUNT:2}
-  symbol: ${SYMBOL}
-  min-volume: 30
+  number-of-entries-to-calculation: ${ENTRIES_COUNT:3}
+  primary-symbol: ${PRIMARY_SYMBOL}
+  primary-min-volume: ${PRIMARY_MIN_VOLUME}
+  secondary-symbol: ${SECONDARY_SYMBOL}
+  secondary-min-volume: ${SECONDARY_MIN_VOLUME}
 logging:
   level.root: info
   pattern.console: '%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n'
