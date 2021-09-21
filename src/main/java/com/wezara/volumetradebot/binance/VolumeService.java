@@ -217,7 +217,6 @@ public class VolumeService {
         String text = String.format("COIN IDX - %s до %s. Кількість %s - %,.2f", direction, toTime, symbol, coinQuantity);
 
         String urlString = String.format(CHANNEL_MESSAGE_URL, botToken, channelId, text);
-
         URL url = new URL(urlString);
         URLConnection conn = url.openConnection();
         InputStream is = new BufferedInputStream(conn.getInputStream());
